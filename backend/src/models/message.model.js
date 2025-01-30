@@ -18,6 +18,7 @@ const messageSchema = new mongoose.Schema(
     image: {
       type: String,
     },
+    gifUrl: { type: String },
   },
   { timestamps: true }
 );
