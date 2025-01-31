@@ -22,6 +22,11 @@ export const useChatStore = create((set, get) => ({
     }
   },
 
+  // Function to add a message to the store
+  addMessage: (newMessage) => set((state) => ({
+    messages: [...state.messages, newMessage],
+  })),
+
   getMessages: async (userId) => {
     set({ isMessagesLoading: true });
     try {

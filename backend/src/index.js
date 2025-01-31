@@ -6,7 +6,7 @@ import cors from "cors";
 import path from "path";
 
 import { connectDB } from "./lib/db.js";
-
+import gifRoutes from "./routes/gif.route.js";
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
 import { app, server } from "./lib/socket.js";
@@ -25,6 +25,9 @@ app.use(
   })
 );
 
+
+
+app.use("/api/gifs", gifRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
